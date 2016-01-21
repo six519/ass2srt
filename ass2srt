@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 def desc_to_tag(description, txt)
 
     case 
@@ -61,4 +63,12 @@ def ass_to_srt(fname)
     rescue => exc
         puts "An error occurred while opening the file " << fname << ". The error is: " << exc.message << "."
     end
+end
+
+if ARGV.length == 1
+    
+    ass_to_srt ARGV[0]
+
+else
+    puts "\nPlease enter ass filename only!!!"
 end
